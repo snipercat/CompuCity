@@ -6,6 +6,8 @@ public class BGMusic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		DontDestroyOnLoad (gameObject);
+
 		if(!PlayerPrefs.HasKey("BGMusic") )
 			PlayerPrefs.SetInt("BGMusic", 1);
 
@@ -21,14 +23,4 @@ public class BGMusic : MonoBehaviour {
 	
 	}
 
-	public void BGMusicEnable(){
-		AudioSource BGMusic =  gameObject.GetComponent<AudioSource>();
-		if (BGMusic.isPlaying) {
-			BGMusic.Stop ();
-			PlayerPrefs.SetInt("BGMusic", 0);
-		} else {
-			BGMusic.Play ();
-			PlayerPrefs.SetInt("BGMusic", 1);
-		}
-	}
 }

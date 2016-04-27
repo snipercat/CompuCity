@@ -19,7 +19,7 @@ public class CargarEscena : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if(onStart){
-			Debug.Log (time);
+//			Debug.Log (time);
 			Espera ();
 			Cargar ();
 		}
