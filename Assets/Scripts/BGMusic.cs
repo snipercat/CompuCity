@@ -25,6 +25,7 @@ public class BGMusic : MonoBehaviour {
 
 	public void BGMusicEnable(){
 		AudioSource BGMusic =  gameObject.GetComponent<AudioSource>();
+		PlayerPrefs.SetInt("BGMusic", 1);
 		if (BGMusic.isPlaying) {
 			BGMusic.Stop ();
 			PlayerPrefs.SetInt("BGMusic", 0);

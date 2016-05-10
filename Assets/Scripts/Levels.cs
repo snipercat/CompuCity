@@ -4,19 +4,32 @@ using UnityEngine.UI;
 
 public class Levels : MonoBehaviour {
 	public Text dialog;
+	public GameObject MenuRespuesta;
 
-
-	private int[,] l1_secuece = { {1,2,3},
-								  {1,0,0},
-								  {0,1,0},
-								  {1,1,1},};
+	private int[,] l1_secuece = { {1,2}, //Correcto
+								  {1,0}, //Voltimetro
+								  {0,1},//Cargador
+							 	  {0,1},//Memoria
+								  {0,0},//Disco Duro
+								  {0,0},//Bateria
+								  {0,0},//Destornillador
+								  {0,0},//Soplador
+								  {0,0},//Antivirus
+								  {0,0},//Sistema
+								  {0,0},//Programas
+		};
 	
-	private string[,] l1_message = {{"Bien","Bien","Bien"}, 
-									{"Mal","Mal","Mal"}};
+	private string[,] l1_message = {{"Debo medir la electricidad","Al parecer la fuente de energía no funciona","¡El computador ya funciona!"}, 
+									 {"Mal","Esto no arregla el problema","Esto no arregla el problema"}};
 
-	private string[] buttons = new string[]{"","Voltimetro","Cargador","Memoria"};
+/// <summary>
+/// ////////////////////////////////////////
+/// </summary>
 
-	private int[,] secuece;
+
+	private string[] buttons = new string[]{"","Voltimetro","Cargador","Memoria", "DiscoDuro", "Bateria","Destornillador","Soplador","Antivirus","Sistema","Programas"};
+
+	private int[,] secuece; //Matriz que indica 
 	private string[,] message;
 	private int state = 0;
 
@@ -30,7 +43,8 @@ public class Levels : MonoBehaviour {
 			message = l1_message;
 		}
 		//blockButtons ();
-	
+		showMessage(message [0,state]);
+		MenuRespuesta.SetActive (true);
 	}
 
 	public void blockButtons(){
@@ -60,14 +74,20 @@ public class Levels : MonoBehaviour {
 
 		
 		if (secuece [0,state] == buttonId) {
-			Debug.Log (message [0, state]);
-			//dialog.text = message [0,state];
+			//Debug.Log (message [0, state]);
 			state++;
+			showMessage(message [0,state]);
 			blockButtons ();
 		} else {
-			Debug.Log (message [1, state]);
+			showMessage(message [1,state]);
+			//Debug.Log ("Eso no solucionará el problema");
 			//dialog.text = message [1,state];
 		}
+	}
+
+	public void showMessage(string texto){
+		MenuRespuesta.SetActive (true);
+		dialog.text = texto;
 	}
 
 }
