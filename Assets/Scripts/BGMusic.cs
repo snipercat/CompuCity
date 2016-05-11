@@ -34,4 +34,10 @@ public class BGMusic : MonoBehaviour {
 			PlayerPrefs.SetInt("BGMusic", 1);
 		}
 	}
+
+	public void BGMusicVolume(float vol){
+		float dbVol = -80+ (vol*80/100);
+		AudioSource BGMusic =  gameObject.GetComponent<AudioSource>();
+		BGMusic.outputAudioMixerGroup.audioMixer.SetFloat ("BGVolume", dbVol);
+	}
 }
