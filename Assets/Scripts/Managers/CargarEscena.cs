@@ -13,6 +13,11 @@ public class CargarEscena : MonoBehaviour {
 		Application.LoadLevel (Escena);
 	}
 
+	public void Cargar(string escena){
+		this.Escena = escena;
+		Cargar ();
+	}
+
 	private void Espera() {
 		
 		System.Threading.Thread.Sleep ( System.TimeSpan.FromSeconds( time));

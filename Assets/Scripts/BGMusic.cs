@@ -7,15 +7,13 @@ public class BGMusic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (gameObject);
-
-		if(!PlayerPrefs.HasKey("BGMusic") )
-			PlayerPrefs.SetInt("BGMusic", 1);
-
-		if (PlayerPrefs.GetInt ("BGMusic") == 1) {
-			AudioSource BGMusic = gameObject.GetComponent<AudioSource> ();
-			BGMusic.Play();
-		}
 	
+		//Si no existe la variable de Volumen, se crea y se define con valor de 75.
+		if(!PlayerPrefs.HasKey("BGMusicVol") )
+			PlayerPrefs.SetFloat("BGMusicVol", 75);
+
+		//Define el volumen de la música
+		BGMusicVolume (PlayerPrefs.GetFloat("BGMusicVol"));
 	}
 	
 	// Update is called once per frame
@@ -23,7 +21,7 @@ public class BGMusic : MonoBehaviour {
 	
 	}
 
-	public void BGMusicEnable(){
+	/*public void BGMusicEnable(){
 		AudioSource BGMusic =  gameObject.GetComponent<AudioSource>();
 		PlayerPrefs.SetInt("BGMusic", 1);
 		if (BGMusic.isPlaying) {
@@ -33,10 +31,17 @@ public class BGMusic : MonoBehaviour {
 			BGMusic.Play ();
 			PlayerPrefs.SetInt("BGMusic", 1);
 		}
-	}
+	}*/
 
 	public void BGMusicVolume(float vol){
-		float dbVol = -80+ (vol*80/100);
+		float dbVol;
+		PlayerPrefs.SetFloat("BGMusicVol", vol);
+		if (vol == 0) {
+			dbVol = -80;
+		} else {
+			dbVol= -40+ (vol*40/100);
+		}
+
 		AudioSource BGMusic =  gameObject.GetComponent<AudioSource>();
 		BGMusic.outputAudioMixerGroup.audioMixer.SetFloat ("BGVolume", dbVol);
 	}

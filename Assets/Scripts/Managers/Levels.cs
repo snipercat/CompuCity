@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class Levels : MonoBehaviour {
 	public Text dialog;
 	public GameObject MenuRespuesta;
+	public GameObject FondoFin;
+	public GameObject 	  BotonFin;
 
 	private int[,] l1_secuece = { {1,2}, //Correcto
 								  {1,0}, //Voltimetro
@@ -38,10 +40,10 @@ public class Levels : MonoBehaviour {
 		int level=1;
 		if( PlayerPrefs.HasKey("Level") )
 			level = PlayerPrefs.GetInt ("Level");
-		if (level == 1) {
+		//if (level == 1) {
 			secuece = l1_secuece;
 			message = l1_message;
-		}
+		//}
 		//blockButtons ();
 		showMessage(message [0,state]);
 		MenuRespuesta.SetActive (true);
@@ -83,11 +85,31 @@ public class Levels : MonoBehaviour {
 			//Debug.Log ("Eso no solucionará el problema");
 			//dialog.text = message [1,state];
 		}
+
+
+		if(l1_secuece.GetLength(1)==state){
+			FondoFin.SetActive (true);
+			BotonFin.SetActive (true);
+		}
 	}
 
 	public void showMessage(string texto){
 		MenuRespuesta.SetActive (true);
 		dialog.text = texto;
+	}
+
+	public void LevelComplete(){
+		//Si el jugador está jugando el nivel máximo en el que va, progresa un nivel.
+		int PlayerLevel = PlayerPrefs.GetInt ("PlayerLevel");
+		int CurrLevel = PlayerPrefs.GetInt("Level");
+		Debug.Log ("PlayerLevel:"+PlayerLevel+"-CurrLevel: "+CurrLevel);
+		if (PlayerLevel == CurrLevel && PlayerLevel != 5) {
+			PlayerPrefs.SetInt ("PlayerLevel", PlayerLevel + 1);
+		}
+
+		//CargarEscena escena decimal seleccion decimal nivel
+		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
+		cargar.Cargar ("3. Niveles");
 	}
 
 }
