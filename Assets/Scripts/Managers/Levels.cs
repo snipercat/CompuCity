@@ -8,22 +8,38 @@ public class Levels : MonoBehaviour {
 	public GameObject FondoFin;
 	public GameObject 	  BotonFin;
 
-	private int[,] l1_secuece = { {1,2}, //Correcto
-								  {1,0}, //Voltimetro
-								  {0,1},//Cargador
-							 	  {0,1},//Memoria
-								  {0,0},//Disco Duro
-								  {0,0},//Bateria
-								  {0,0},//Destornillador
-								  {0,0},//Soplador
-								  {0,0},//Antivirus
-								  {0,0},//Sistema
-								  {0,0},//Programas
+	private int[,] l1_secuence = { {1,2}, //Correcto
+								  {1,0},//1 - Voltimetro
+								  {0,1},//2 - Cargador
+							 	  {0,1},//3 - Memoria
+								  {0,0},//4 - Disco Duro
+								  {0,0},//5 - Bateria
+								  {0,0},//6 - Destornillador
+								  {0,0},//7 - Soplador
+								  {0,0},//8 - Antivirus
+								  {0,0},//9 - Sistema
+								  {0,0},//10 - Programas
 		};
 	
 	private string[,] l1_message = {{"Debo medir la electricidad","Al parecer la fuente de energía no funciona","¡El computador ya funciona!"}, 
 									 {"Mal","Esto no arregla el problema","Esto no arregla el problema"}};
 
+	private int[,] l2_secuence = { {8,6,7}, //Correcto
+									{0,0,0},//1 - Voltimetro
+									{0,0,0},//2 - Cargador
+									{0,0,1},//3 - Memoria
+									{1,0,0},//4 - Disco Duro
+									{0,0,0},//5 - Bateria
+									{1,1,1},//6 - Destornillador
+									{1,1,1},//7 - Soplador
+									{1,0,0},//8 - Antivirus
+									{0,0,0},//9 - Sistema
+									{0,0,0},//10 - Programas
+	};
+
+	private string[,] l2_message = {{"Seguramente el PC tiene virus","Como quieren que ande si está sucio","¡El computador ya funciona!"}, 
+		{"Mal","Esto no arregla el problema","No lo puedo limpiar si está sellado","Voy a intentarlo nuevamente"}};
+	
 /// <summary>
 /// ////////////////////////////////////////
 /// </summary>
@@ -31,18 +47,24 @@ public class Levels : MonoBehaviour {
 
 	private string[] buttons = new string[]{"","Voltimetro","Cargador","Memoria", "DiscoDuro", "Bateria","Destornillador","Soplador","Antivirus","Sistema","Programas"};
 
-	private int[,] secuece; //Matriz que indica 
+	private int[,] secuence; //Matriz que indica 
 	private string[,] message;
 	private int state = 0;
 
 	// Use this for initialization
 	void Start () {
-		int level=1;
-		if( PlayerPrefs.HasKey("Level") )
-			level = PlayerPrefs.GetInt ("Level");
-		//if (level == 1) {
-			secuece = l1_secuece;
+		state = 0;
+		int Level = PlayerPrefs.GetInt ("Level");
+		switch (Level) {
+		case 1:
+			secuence = l1_secuence;
 			message = l1_message;
+		break;
+		case 2:
+			secuence = l2_secuence;
+			message = l2_message;
+		break;
+		}
 		//}
 		//blockButtons ();
 		showMessage(message [0,state]);
@@ -56,7 +78,7 @@ public class Levels : MonoBehaviour {
 			{
 				
 				boton = GameObject.Find (buttons[c]).GetComponent<Button>();
-				boton.interactable = secuece[c,state] == 1;
+				boton.interactable = secuence[c,state] == 1;
 			}
 			catch(System.Exception e)
 			{
@@ -75,7 +97,7 @@ public class Levels : MonoBehaviour {
 		}
 
 		
-		if (secuece [0,state] == buttonId) {
+		if (secuence [0,state] == buttonId) {
 			//Debug.Log (message [0, state]);
 			state++;
 			showMessage(message [0,state]);
@@ -87,7 +109,7 @@ public class Levels : MonoBehaviour {
 		}
 
 
-		if(l1_secuece.GetLength(1)==state){
+		if(l1_secuence.GetLength(1)==state){
 			FondoFin.SetActive (true);
 			BotonFin.SetActive (true);
 		}

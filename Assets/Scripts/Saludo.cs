@@ -8,9 +8,21 @@ public class Saludo : MonoBehaviour {
 	public Button Opciones;
 	public Button Siguiente;
 
+	private int Level;
+
 	// Use this for initialization
 	void Start () {
-		Conversacion.text = "Cliente: Hola. Soy Sofía.";
+		Level = PlayerPrefs.GetInt ("Level");
+		switch (Level)
+		{
+		case 1:
+			Conversacion.text = "Cliente: Hola. Soy Sofía. El PC no enciende.";
+		break;
+		case 2:
+			Conversacion.text = "Cliente: Hola. Soy María. El PC está lento.";
+		break;
+		}
+
 		Opciones.gameObject.SetActive(true);
 		Siguiente.gameObject.SetActive(false);
 	}
