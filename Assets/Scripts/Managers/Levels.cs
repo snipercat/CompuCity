@@ -11,7 +11,7 @@ public class Levels : MonoBehaviour {
 	private int[,] l1_secuence = { {1,2}, //Correcto
 								  {1,0},//1 - Voltimetro
 								  {0,1},//2 - Cargador
-							 	  {0,1},//3 - Memoria
+							 	  {1,1},//3 - Memoria
 								  {0,0},//4 - Disco Duro
 								  {0,0},//5 - Bateria
 								  {0,0},//6 - Destornillador
@@ -22,23 +22,25 @@ public class Levels : MonoBehaviour {
 		};
 	
 	private string[,] l1_message = {{"Debo medir la electricidad","Al parecer la fuente de energía no funciona","¡El computador ya funciona!"}, 
-									 {"Mal","Esto no arregla el problema","Esto no arregla el problema"}};
-
-	private int[,] l2_secuence = { {8,6,7}, //Correcto
-									{0,0,0},//1 - Voltimetro
-									{0,0,0},//2 - Cargador
-									{0,0,1},//3 - Memoria
-									{1,0,0},//4 - Disco Duro
-									{0,0,0},//5 - Bateria
-									{1,1,1},//6 - Destornillador
-									{1,1,1},//7 - Soplador
-									{1,0,0},//8 - Antivirus
-									{0,0,0},//9 - Sistema
-									{0,0,0},//10 - Programas
+									{"Esto no arregla el problema","Esto no arregla el problema",""}};
+/// <summary>
+/// ////////////////////////////////////////
+/// </summary>
+	private int[,] l2_secuence = {  {8,6,7,6}, //Correcto
+									{0,0,0,0},//1 - Voltimetro
+									{0,0,0,0},//2 - Cargador
+									{0,0,1,1},//3 - Memoria
+									{1,0,0,0},//4 - Disco Duro
+									{0,0,0,0},//5 - Bateria
+									{1,1,1,1},//6 - Destornillador
+									{1,1,1,1},//7 - Soplador
+									{1,0,0,0},//8 - Antivirus
+									{0,0,0,0},//9 - Sistema
+									{0,0,0,0},//10 - Programas
 	};
 
-	private string[,] l2_message = {{"Seguramente el PC tiene virus","Como quieren que ande si está sucio","¡El computador ya funciona!"}, 
-		{"Mal","Esto no arregla el problema","No lo puedo limpiar si está sellado","Voy a intentarlo nuevamente"}};
+	private string[,] l2_message = {{"Seguramente el PC tiene virus","Ya no tiene Virus, pero ¿Cómo quieren que sea rápido si está sucio?","Ahora si lo puedo limpiar","Falta algo más para entregarlo","¡Ya puedo entregarlo!"}, 
+									{"Esto no arregla el problema"  ,"No lo puedo limpiar si está sellado","Aún no lo he limpiado","No debo hacerle más cambios",""}};
 	
 /// <summary>
 /// ////////////////////////////////////////
@@ -67,8 +69,10 @@ public class Levels : MonoBehaviour {
 		}
 		//}
 		//blockButtons ();
+		Debug.Log("State= "+state+ "Message: "+message [0,state]);
 		showMessage(message [0,state]);
-		MenuRespuesta.SetActive (true);
+		Debug.Log("State= "+state);
+		//MenuRespuesta.SetActive (true);
 	}
 
 	public void blockButtons(){
@@ -82,7 +86,7 @@ public class Levels : MonoBehaviour {
 			}
 			catch(System.Exception e)
 			{
-				Debug.Log (e.Message + '@'+ buttons [c] );
+				//Debug.Log (e.Message + '@'+ buttons [c] );
 			}
 		}
 	}
@@ -109,7 +113,7 @@ public class Levels : MonoBehaviour {
 		}
 
 
-		if(l1_secuence.GetLength(1)==state){
+		if(secuence.GetLength(1)==state){
 			FondoFin.SetActive (true);
 			BotonFin.SetActive (true);
 		}
