@@ -8,6 +8,7 @@ public class Sonidos : MonoBehaviour {
 	public void Musica(){
 		audio = GetComponent<AudioSource> ();
 		audio.enabled = !audio.enabled;
+
 		//audio.volume = 1 - audio.volume;
 	}
 

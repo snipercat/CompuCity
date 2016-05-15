@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -10,7 +11,8 @@ public class CargarEscena : MonoBehaviour {
 	public InputField Caja_Texto;
 
 	public void Cargar(){
-		Application.LoadLevel (Escena);
+		SceneManager.LoadScene(Escena);
+		//Application.LoadLevel (Escena);
 	}
 
 	public void Cargar(string escena){
