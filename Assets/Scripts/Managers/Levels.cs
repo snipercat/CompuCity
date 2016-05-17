@@ -2,149 +2,45 @@
 using System.Collections;
 using UnityEngine.UI;
 
+
 public class Levels : MonoBehaviour {
 	public Text dialog;
 	public GameObject MenuRespuesta;
 	public GameObject FondoFin;
 	public GameObject 	  BotonFin;
-
-	private int[,] l1_secuence = { {1,2}, //Correcto
-								  {1,0},//1 - Voltimetro
-								  {0,1},//2 - Cargador
-							 	  {1,1},//3 - Memoria
-								  {0,0},//4 - Disco Duro
-								  {0,0},//5 - Bateria
-								  {0,0},//6 - Destornillador
-								  {0,0},//7 - Soplador
-								  {0,0},//8 - Antivirus
-								  {0,0},//9 - Sistema
-								  {0,0}//10 - Programas
-		};
-	
-	private string[,] l1_message = {{"Debo medir la electricidad","Al parecer la fuente de energía no funciona","¡El computador ya funciona!"}, 
-									{"Esto no arregla el problema","Esto no arregla el problema",""}};
-/// <summary>
-/// ////////////////////////////////////////
-/// </summary>
-	private int[,] l2_secuence = {  {8,6,7,6}, //Correcto
-									{0,0,0,0},//1 - Voltimetro
-									{0,0,0,0},//2 - Cargador
-									{0,0,1,1},//3 - Memoria
-									{1,0,0,0},//4 - Disco Duro
-									{0,0,0,0},//5 - Bateria
-									{1,1,1,1},//6 - Destornillador
-									{1,1,1,1},//7 - Soplador
-									{1,0,0,0},//8 - Antivirus
-									{0,0,0,0},//9 - Sistema
-									{0,0,0,0}//10 - Programas
-	};
-
-	private string[,] l2_message = {{"Seguramente el PC tiene virus","Ya no tiene Virus, pero ¿Cómo quieren que sea rápido si está sucio?","Ahora si lo puedo limpiar","Falta algo más para entregarlo","¡Ya puedo entregarlo!"}, 
-									{"Esto no arregla el problema"  ,"No lo puedo limpiar si está sellado","Aún no lo he limpiado","No debo hacerle más cambios",""}};
-	
-	/// <summary>
-	/// ////////////////////////////////////////
-	/// </summary>
-	private int[,] l3_secuence = {  {	4	,	9	,	8	}	,	 //Correcto
-									{	0	,	0	,	0	}	,	//1 - Voltimetro
-									{	0	,	0	,	0	}	,	//2 - Cargador
-									{	0	,	0	,	0	}	,	//3 - Memoria
-									{	1	,	1	,	1	}	,	//4 - Disco Duro
-									{	0	,	0	,	0	}	,	//5 - Bateria
-									{	0	,	0	,	0	}	,	//6 - Destornillador
-									{	0	,	0	,	0	}	,	//7 - Soplador
-									{	1	,	1	,	1	}	,	//8 - Antivirus
-									{	1	,	1	,	1	}	,	//9 - Sistema
-									{	1	,	1	,	1	}		//10 - Programas
-
-	};
-
-	private string[,] l3_message = {{"Antes de Formatear, debo realizar un BackUp","Ahora si puedo formatear"   ,"debo protegerlo de los virus","¡Ya puedo entregarlo!"}, 
-									{"Esto no arregla el problema"  			  ,"Esto no arregla el problema","Esto no arregla el problema" ,""}};
-
-	/// <summary>
-	/// ////////////////////////////////////////
-	/// </summary>
-	private int[,] l4_secuence = {  {	6	,	7	,	3	,	6	}	,	 //Correcto
-									{	0	,	0	,	0	,	0	}	,	//1 - Voltimetro
-									{	0	,	0	,	0	,	0	}	,	//2 - Cargador
-									{	1	,	1	,	1	,	1	}	,	//3 - Memoria
-									{	1	,	1	,	1	,	1	}	,	//4 - Disco Duro
-									{	0	,	0	,	0	,	0	}	,	//5 - Bateria
-									{	1	,	1	,	1	,	1	}	,	//6 - Destornillador
-									{	1	,	1	,	1	,	1	}	,	//7 - Soplador
-									{	0	,	0	,	0	,	0	}	,	//8 - Antivirus
-									{	1	,	1	,	1	,	1	}	,	//9 - Sistema
-									{	0	,	0	,	0	,	0	}		//10 - Programas
-	};
-
-	private string[,] l4_message = {{"Debo destaparlo","Wohhh! Tene mucho polvo" ,"Ahora si puedo cambiar la memoria","Todo listo, excepto por un detalle","¡Ya puedo entregarlo!"}, 
-									{"Esto no arregla el problema"  			 ,"Esto no arregla el problema"      ,"Esto no arregla el problema"       ,""}};
-
-	/// <summary>
-	/// ////////////////////////////////////////
-	/// </summary>
-	private int[,] l5_secuence = {  {	5	,	2	,	8	}	,	 //Correcto
-									{	1	,	1	,	1	}	,	//1 - Voltimetro
-									{	1	,	1	,	1	}	,	//2 - Cargador
-									{	1	,	1	,	1	}	,	//3 - Memoria
-									{	1	,	1	,	1	}	,	//4 - Disco Duro
-									{	1	,	1	,	0	}	,	//5 - Bateria
-									{	1	,	1	,	1	}	,	//6 - Destornillador
-									{	1	,	1	,	1	}	,	//7 - Soplador
-									{	1	,	1	,	1	}	,	//8 - Antivirus
-									{	1	,	1	,	1	}	,	//9 - Sistema
-									{	1	,	1	,	1	}	,	//10 - Programas
-
-	};
-
-	private string[,] l5_message = {{"Seguro la batería no carga bien","Es una batería nueva, pero no carga lo suficiente"  ,"Ya carga al 100%, pero se descarga muy rápido, Algún programa malicioso debe estar descargando la batería","¡Ya Funciona, ya puedo entregarlo!"}, 
-									{"Esto no arregla el problema"	 ,"Esto no arregla el problema"      					,"Esto no arregla el problema"       																		,""}};
-
-	/// <summary>
-	/// ////////////////////////////////////////
-	/// </summary>
+	public Text TextMovementLeft;
+	public GameObject MenuDerrota;
 
 	private string[] buttons = new string[]{"","Voltimetro","Cargador","Memoria", "DiscoDuro", "Bateria","Destornillador","Soplador","Antivirus","Sistema","Programas"};
 
 	private int[,] secuence; //Matriz que indica 
 	private string[,] message;
 	private int state = 0;
+	private int movements;
+	private string tip;
+	//public int loadLevel;
 
 	// Use this for initialization
 	void Start () {
 		state = 0;
 		int Level = PlayerPrefs.GetInt ("Level");
-		switch (Level) {
-		case 1:
-			secuence = l1_secuence;
-			message = l1_message;
-		break;
-		case 2:
-			secuence = l2_secuence;
-			message = l2_message;
-		break;
-		case 3:
-			secuence = l3_secuence;
-			message = l3_message;
-			break;
-		case 4:
-			secuence = l4_secuence;
-			message = l4_message;
-			break;
-		case 5:
-			secuence = l5_secuence;
-			message = l5_message;
-			break;
-		}
-		//}
-		//blockButtons ();
-		Debug.Log("State= "+state+ "Message: "+message [0,state]);
+		//int Level = loadLevel;
+
+		 // Obtener el mensaje y la secuenca para el nivel.
+		secuence = LevelsMatrix.getSecuence (Level);
+		message = LevelsMatrix.getMessage (Level);
+
 		showMessage(message [0,state]);
-		Debug.Log("State= "+state);
+		tip = message [0, state];
+		movements = getTryByLevel ();
+		TextMovementLeft.text = movements.ToString();
 		//MenuRespuesta.SetActive (true);
 	}
 
+
+/// <summary>
+/// Bloquea los botones de acuerdo a la infomración de la matriz de la secuencia del nivel.
+/// </summary>
 	public void blockButtons(){
 		Button boton;
 		for (int c = 1; c < buttons.GetLength(0); c++) {
@@ -161,6 +57,13 @@ public class Levels : MonoBehaviour {
 		}
 	}
 
+
+
+
+/// <summary>
+/// Procedimiento proncipal del flujo del juego
+/// </summary>
+/// <param name="boton">Boton.</param>
 	public void check(Button boton){
 		int buttonId = 0;
 		for (int c = 1; c < buttons.GetLength(0); c++) {
@@ -175,6 +78,7 @@ public class Levels : MonoBehaviour {
 			//Debug.Log (message [0, state]);
 			state++;
 			showMessage(message [0,state]);
+			tip = message [0, state];
 			blockButtons ();
 		} else {
 			showMessage(message [1,state]);
@@ -183,17 +87,44 @@ public class Levels : MonoBehaviour {
 		}
 
 
-		if(secuence.GetLength(1)==state){
+		if (secuence.GetLength (1) == state) {
 			FondoFin.SetActive (true);
 			BotonFin.SetActive (true);
+		} else {
+			movements--;
+			TextMovementLeft.text = movements.ToString();
+
+			if (movements < 0) {
+				MenuDerrota.SetActive (true);
+			}
 		}
+
+
 	}
 
+
+
+/// <summary>
+/// Muestra el mensaje en la pantalla y lo actualiza
+/// </summary>
+/// <param name="texto">Texto.</param>
 	public void showMessage(string texto){
 		MenuRespuesta.SetActive (true);
 		dialog.text = texto;
 	}
 
+
+/// <summary>
+/// Solo Muestra el mensaje 
+/// </summary>
+	public void showTip(){
+		MenuRespuesta.SetActive (true);
+		dialog.text = tip;
+	}
+
+/// <summary>
+/// Muestra el mensaje cuando se completa el juego
+/// </summary>
 	public void LevelComplete(){
 		//Si el jugador está jugando el nivel máximo en el que va, progresa un nivel.
 		int PlayerLevel = PlayerPrefs.GetInt ("PlayerLevel");
@@ -206,6 +137,34 @@ public class Levels : MonoBehaviour {
 		//CargarEscena escena decimal seleccion decimal nivel
 		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
 		cargar.Cargar ("3. Niveles");
+	}
+
+
+/// <summary>
+/// Obtiene la cantidad de movimientos que tendrá el jugador por nivel
+/// Basado en la cantidad de opciones que tendrá dividido en 2.
+/// </summary>
+/// <returns>The try by level.</returns>
+	private int getTryByLevel(){
+
+		int options = 0;
+
+		for (int tool = 1; tool < secuence.GetLength (0); tool++) {
+			for (int phase = 0; phase < secuence.GetLength (1); phase++)
+				options += secuence [tool, phase];
+		}
+
+		return Mathf.FloorToInt (options / 2);
+	}
+
+	public void restarLevel(){
+		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
+		cargar.Cargar ("4.1. Nivel 1.1");
+	}
+
+	public void goHome(){
+		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
+		cargar.Cargar ("1. Menu");
 	}
 
 }
