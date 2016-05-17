@@ -148,13 +148,17 @@ public class Levels : MonoBehaviour {
 	private int getTryByLevel(){
 
 		int options = 0;
+		//Si no saludó, no puede fallar ni una (por maleducado :v)
+		if(PlayerPrefs.GetInt ("Saludo") == 0)
+			return secuence.GetLength (1);
 
+			//Si saludó, obtiene más intentos.
 		for (int tool = 1; tool < secuence.GetLength (0); tool++) {
 			for (int phase = 0; phase < secuence.GetLength (1); phase++)
 				options += secuence [tool, phase];
 		}
 
-		return Mathf.FloorToInt (options / 2);
+		return Mathf.CeilToInt (options / 2);
 	}
 
 	public void restarLevel(){
