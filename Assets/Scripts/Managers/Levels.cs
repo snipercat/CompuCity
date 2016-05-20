@@ -28,7 +28,14 @@ public class Levels : MonoBehaviour {
 
 		 // Obtener el mensaje y la secuenca para el nivel.
 		secuence = LevelsMatrix.getSecuence (Level);
-		message = LevelsMatrix.getMessage (Level);
+		switch (Level) {
+		case 1:
+			message = LevelsMatrix.getMessage_tut (Level);
+			break;
+		default:
+			message = LevelsMatrix.getMessage (Level);
+			break;
+		}
 
 		showMessage(message [0,state]);
 		tip = message [0, state];

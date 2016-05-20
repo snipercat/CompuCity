@@ -73,7 +73,7 @@ public static class LevelsMatrix {
 		{	0	,	0	,	0	,	0	}		//10 - Programas
 	};
 
-	private static string[,] l4_message = {{"Debo destaparlo","Wohhh! Tene mucho polvo" ,"Ahora si puedo cambiar la memoria","Todo listo, excepto por un detalle","¡Ya puedo entregarlo!"}, 
+	private static string[,] l4_message = {{"Debo destaparlo","Wohhh! Tiene mucho polvo" ,"Ahora si puedo cambiar la memoria","Todo listo, excepto por un detalle","¡Ya puedo entregarlo!"}, 
 		{"Esto no arregla el problema"  			 ,"Esto no arregla el problema"      ,"Esto no arregla el problema"       ,""}};
 
 	/// <summary>
@@ -100,6 +100,12 @@ public static class LevelsMatrix {
 
 	/// <summary>
 	/// Gets the secuence of the level
+	/// </summary>
+
+	private static string[,] l1_message_tut = {{"Debo medir la electricidad","Al parecer la fuente de energía no funciona","¡El computador ya funciona!"}, 
+		{"Esto no arregla el problema","Esto no arregla el problema",""}};
+	/// <summary>
+	/// ////////////////////////////////////////
 	/// </summary>
 	/// <returns>The secuence.</returns>
 	/// <param name="level">Level.</param>
@@ -155,6 +161,36 @@ public static class LevelsMatrix {
 		case 5:
 			message = l5_message;
 			break;
+		}
+		return message;
+	}
+
+
+	/// <summary>
+	/// Gets the messages of the level
+	/// </summary>
+	/// <returns>The message.</returns>
+	/// <param name="level">Level.</param>
+	public static string[,] getMessage_tut (int level){
+
+		string [,] message = {};
+
+		switch (level) {
+		case 1:
+			message = l1_message_tut;
+			break;
+		/*case 2:
+			message = l2_message;
+			break;
+		case 3:
+			message = l3_message;
+			break;
+		case 4:
+			message = l4_message;
+			break;
+		case 5:
+			message = l5_message;
+			break;*/
 		}
 		return message;
 	}

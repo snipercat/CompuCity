@@ -29,4 +29,10 @@ public class LevelSelectManager : MonoBehaviour {
 		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
 		cargar.Cargar ("4.1. Nivel 1.1");
 	}
+
+	public void LoadTutorial(){
+		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
+		cargar.Cargar ("5.1. Nivel 0");
+	}
+
 }

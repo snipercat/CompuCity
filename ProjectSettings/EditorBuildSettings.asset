@@ -23,3 +23,7 @@ EditorBuildSettings:
     path: Assets/Escena/4.1. Nivel 1.1.unity
   - enabled: 1
     path: Assets/Escena/4.2. Nivel 1.2.unity
+  - enabled: 1
+    path: Assets/Escena/5.1. Nivel 0.unity
+  - enabled: 1
+    path: Assets/Escena/5.2. Nivel 0.unity
