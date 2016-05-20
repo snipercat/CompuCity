@@ -18,6 +18,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escena/2.2. Nombre Tienda.unity
   - enabled: 1
+    path: Assets/Escena/2.3. Video.unity
+  - enabled: 1
     path: Assets/Escena/3. Niveles.unity
   - enabled: 1
     path: Assets/Escena/4.1. Nivel 1.1.unity
