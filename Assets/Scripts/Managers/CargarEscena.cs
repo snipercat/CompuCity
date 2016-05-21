@@ -19,12 +19,7 @@ public class CargarEscena : MonoBehaviour {
 		this.Escena = escena;
 		Cargar ();
 	}
-
-	private void Espera() {
 		
-		System.Threading.Thread.Sleep ( System.TimeSpan.FromSeconds( time));
-	}
-
 	public void Verificar_Carga(string variable){
 		if (Caja_Texto.text != "") {
 			PlayerPrefs.SetString (variable, Caja_Texto.text);
@@ -35,14 +30,16 @@ public class CargarEscena : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if(onStart){
-			Debug.Log (time);
-			Espera ();
-			Cargar ();
+			StartCoroutine (WaitToLoad ());
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+
+	IEnumerator WaitToLoad(){
+		//animation.CrossFade("Death"); // smoothly start the Death animation
+		yield return new WaitForSeconds(time); // wait time enough
+		Cargar(); // animation finished: load Credits
 	}
+
+
 }

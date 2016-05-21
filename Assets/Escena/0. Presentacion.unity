@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Escena: 1. Menu
-  time: 2
+  time: 3
   onStart: 1
   Caja_Texto: {fileID: 0}
 --- !u!1 &1810798054
