@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 080b94e7e9c3ee44a9a0d32f1064cbc0
+timeCreated: 1463703837
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - sfx: {fileID: 24100000, guid: 50a3517c35179b64bb6fdb4bf27e177a, type: 2}
+  - BGMusic: {fileID: 24100000, guid: 50a3517c35179b64bb6fdb4bf27e177a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -142,8 +142,8 @@ public class Levels : MonoBehaviour {
 		}
 
 		//CargarEscena escena decimal seleccion decimal nivel
-		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
-		cargar.Cargar ("3. Niveles");
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Niveles);
+
 	}
 
 
@@ -169,13 +169,11 @@ public class Levels : MonoBehaviour {
 	}
 
 	public void restarLevel(){
-		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
-		cargar.Cargar ("4.1. Nivel 1.1");
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Dialogo);
 	}
 
 	public void goHome(){
-		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
-		cargar.Cargar ("1. Menu");
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Menu);
 	}
 
 }

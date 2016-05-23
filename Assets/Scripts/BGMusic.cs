@@ -4,7 +4,10 @@ using System.Collections;
 public class BGMusic : MonoBehaviour {
 
 
-	// Use this for initialization
+	// /// <summary>
+	/// Al inicializar se carga el valor guardado del volumen de la música
+	/// Y da la orden para que no se destruya el objeto cuando se cambia de escena.
+	/// </summary>
 	void Start () {
 		DontDestroyOnLoad (gameObject);
 	
@@ -15,24 +18,13 @@ public class BGMusic : MonoBehaviour {
 		//Define el volumen de la música
 		BGMusicVolume (PlayerPrefs.GetFloat("BGMusicVol"));
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
-	/*public void BGMusicEnable(){
-		AudioSource BGMusic =  gameObject.GetComponent<AudioSource>();
-		PlayerPrefs.SetInt("BGMusic", 1);
-		if (BGMusic.isPlaying) {
-			BGMusic.Stop ();
-			PlayerPrefs.SetInt("BGMusic", 0);
-		} else {
-			BGMusic.Play ();
-			PlayerPrefs.SetInt("BGMusic", 1);
-		}
-	}*/
 
+
+	/// <summary>
+	/// Define el volumen de la música, 
+	/// </summary>
+	/// <param name="vol">Vol.</param>
 	public void BGMusicVolume(float vol){
 		float dbVol;
 		PlayerPrefs.SetFloat("BGMusicVol", vol);

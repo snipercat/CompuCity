@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &58824590
 RectTransform:
   m_ObjectHideFlags: 0
@@ -339,8 +339,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Escena: 1.1. Puntuaciones
   time: 0
-  onStart: 0
-  Caja_Texto: {fileID: 0}
 --- !u!1 &232404604
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +552,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &736070391
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +817,6 @@ GameObject:
   - 222: {fileID: 1000780625}
   - 114: {fileID: 1000780624}
   - 114: {fileID: 1000780623}
-  - 114: {fileID: 1000780626}
   m_Layer: 5
   m_Name: Boton Creditos
   m_TagString: Untagged
@@ -883,8 +880,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1000780626}
-        m_MethodName: Cargar
+      - m_Target: {fileID: 1438270917}
+        m_MethodName: cargaCreditos
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -929,21 +926,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1000780621}
---- !u!114 &1000780626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1000780621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc770550645f608459883de18d667271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Escena: 1.2. Creditos
-  time: 0
-  onStart: 0
-  Caja_Texto: {fileID: 0}
 --- !u!1 &1067596283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,67 +996,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1146306323
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1146306325}
-  - 108: {fileID: 1146306324}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &1146306324
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1146306323}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_BounceIntensity: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_AreaSize: {x: 1, y: 1}
---- !u!4 &1146306325
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1146306323}
-  m_LocalRotation: {x: 0.40821794, y: -0.23456973, z: 0.109381676, w: 0.87542605}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
 --- !u!1 &1261247732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,7 +1053,7 @@ Transform:
   m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1309111094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,7 +1132,7 @@ GameObject:
   - 114: {fileID: 1313374784}
   - 114: {fileID: 1313374783}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SliderSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,7 +1216,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1438270917}
+      - m_Target: {fileID: 1438270920}
         m_MethodName: SFXMusicVolume
         m_Mode: 2
         m_Arguments:
@@ -1319,7 +1240,6 @@ GameObject:
   - 222: {fileID: 1350973807}
   - 114: {fileID: 1350973806}
   - 114: {fileID: 1350973805}
-  - 114: {fileID: 1350973808}
   m_Layer: 5
   m_Name: Boton Continuar
   m_TagString: Untagged
@@ -1383,8 +1303,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1350973808}
-        m_MethodName: Cargar
+      - m_Target: {fileID: 1438270917}
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1429,21 +1349,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1350973803}
---- !u!114 &1350973808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1350973803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc770550645f608459883de18d667271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Escena: 3. Niveles
-  time: 0
-  onStart: 0
-  Caja_Texto: {fileID: 0}
 --- !u!1 &1356078175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,7 +1425,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1438270918}
   - 114: {fileID: 1438270917}
-  - 114: {fileID: 1438270919}
+  - 114: {fileID: 1438270920}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1551,8 +1456,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
---- !u!114 &1438270919
+  m_RootOrder: 5
+--- !u!114 &1438270920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1560,13 +1465,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438270916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc770550645f608459883de18d667271, type: 3}
+  m_Script: {fileID: 11500000, guid: 080b94e7e9c3ee44a9a0d32f1064cbc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Escena: 
-  time: 0
-  onStart: 0
-  Caja_Texto: {fileID: 0}
+  sfx: {fileID: 24100000, guid: 50a3517c35179b64bb6fdb4bf27e177a, type: 2}
+  BGMusic: {fileID: 24100000, guid: 50a3517c35179b64bb6fdb4bf27e177a, type: 2}
 --- !u!1 &1469071598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,7 +1889,7 @@ GameObject:
   - 114: {fileID: 1752090072}
   - 114: {fileID: 1752090073}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SliderMusica
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2058,7 +1961,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1438270917}
+      - m_Target: {fileID: 1438270920}
         m_MethodName: BGMusicVolume
         m_Mode: 2
         m_Arguments:
@@ -2094,7 +1997,6 @@ GameObject:
   - 222: {fileID: 1955523738}
   - 114: {fileID: 1955523737}
   - 114: {fileID: 1955523736}
-  - 114: {fileID: 1955523739}
   m_Layer: 5
   m_Name: Boton Nuevo Juego
   m_TagString: Untagged
@@ -2204,21 +2106,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1955523734}
---- !u!114 &1955523739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1955523734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc770550645f608459883de18d667271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Escena: 2.1. Nombre Jugador
-  time: 0
-  onStart: 0
-  Caja_Texto: {fileID: 0}
 --- !u!1 &2012831743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,7 +2199,7 @@ RectTransform:
   - {fileID: 1129451470}
   - {fileID: 1067596284}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

@@ -292,7 +292,6 @@ GameObject:
   - 222: {fileID: 442940666}
   - 114: {fileID: 442940665}
   - 114: {fileID: 442940664}
-  - 114: {fileID: 442940663}
   m_Layer: 5
   m_Name: Boton Ignorar
   m_TagString: Untagged
@@ -317,21 +316,6 @@ RectTransform:
   m_AnchoredPosition: {x: 725, y: 237.5}
   m_SizeDelta: {x: 3566, y: 1484}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &442940663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 442940661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc770550645f608459883de18d667271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Escena: 4.2. Nivel 1.2
-  time: 0
-  onStart: 0
-  Caja_Texto: {fileID: 0}
 --- !u!114 &442940664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +355,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 442940663}
+      - m_Target: {fileID: 0}
         m_MethodName: Cargar
         m_Mode: 1
         m_Arguments:
@@ -838,7 +822,6 @@ GameObject:
   - 222: {fileID: 1034364244}
   - 114: {fileID: 1034364243}
   - 114: {fileID: 1034364242}
-  - 114: {fileID: 1034364241}
   m_Layer: 5
   m_Name: Boton Siguiente
   m_TagString: Untagged
@@ -863,21 +846,6 @@ RectTransform:
   m_AnchoredPosition: {x: 701, y: 352.5}
   m_SizeDelta: {x: 3566, y: 1484}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1034364241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1034364239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc770550645f608459883de18d667271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Escena: 5.2. Nivel 0
-  time: 0
-  onStart: 0
-  Caja_Texto: {fileID: 0}
 --- !u!114 &1034364242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,7 +885,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1034364241}
+      - m_Target: {fileID: 0}
         m_MethodName: Cargar
         m_Mode: 1
         m_Arguments:
