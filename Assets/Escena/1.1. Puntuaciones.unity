@@ -460,8 +460,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Escena: 1. Menu
   time: 0
-  onStart: 0
-  Caja_Texto: {fileID: 0}
 --- !u!114 &1165845727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,9 +499,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1165845726}
-        m_MethodName: Cargar
-        m_Mode: 1
+      - m_Target: {fileID: 11500000, guid: 94e7a34b5b144434d861ee4841aefebb, type: 3}
+        m_MethodName: set_name
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

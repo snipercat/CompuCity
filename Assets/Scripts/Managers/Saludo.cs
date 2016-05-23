@@ -14,8 +14,8 @@ public class Saludo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Level = PlayerPrefs.GetInt ("Level");
-		PlayerPrefs.SetInt ("Saludo", 0);
+		Level = PlayerPrefs.GetInt (VARIABLES.CURRENT_LEVEL);
+		PlayerPrefs.SetInt (VARIABLES.SALUDO, 0);
 		switch (Level)
 		{
 		case 1:
@@ -39,12 +39,13 @@ public class Saludo : MonoBehaviour {
 		//Siguiente.gameObject.SetActive(false);
 	}
 
-	public void Constestar(int Opcion){
+	public void Constestar(){
 
-		PlayerPrefs.SetInt ("Saludo", 1);
-
-		string jugador = PlayerPrefs.GetString("Jugador");
-		string tienda = PlayerPrefs.GetString("Tienda");
+		PlayerPrefs.SetInt (VARIABLES.SALUDO, 1);
+		//Cargará el nivel 
+		int Opcion = 1;
+		string jugador = PlayerPrefs.GetString(VARIABLES.PLAYERNAME_PREF);
+		string tienda = PlayerPrefs.GetString(VARIABLES.STORENAME_PREF);
 
 		if (Opcion == 1) {
 			Conversacion.text += "\n"+jugador+": Hola. Soy "+jugador+", bienvenido a "+tienda+", Yo puedo solucionarlo! :D";
@@ -54,8 +55,16 @@ public class Saludo : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
-	void Update () {
-	
+	public void LoadHome(){
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Menu);
 	}
+
+	public void RestarLevel(){
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Dialogo);
+	}
+
+	public void Next(){
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Juego);
+	}
+
 }

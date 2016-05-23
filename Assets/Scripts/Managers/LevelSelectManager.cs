@@ -9,13 +9,9 @@ public class LevelSelectManager : MonoBehaviour {
 		enableButtons ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	public void enableButtons(){
-		int maxLevel = PlayerPrefs.GetInt ("PlayerLevel");
+		int maxLevel = PlayerPrefs.GetInt (VARIABLES.PLAYERLEVEL);
 		Button boton;
 		Debug.Log (maxLevel);
 		for(int l =1; l<=maxLevel;l++){
@@ -24,15 +20,19 @@ public class LevelSelectManager : MonoBehaviour {
 		}
 	}
 
+
+	public void LoadHome(){
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Menu);
+	}
+
 	public void LoadLevel(int level){
-		PlayerPrefs.SetInt ("Level", level);
-		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
-		cargar.Cargar ("4.1. Nivel 1.1");
+		PlayerPrefs.SetInt (VARIABLES.CURRENT_LEVEL, level);
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Dialogo);
 	}
 
 	public void LoadTutorial(){
-		CargarEscena cargar = gameObject.GetComponent<CargarEscena> ();
-		cargar.Cargar ("5.1. Nivel 0");
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Tutorial_Dialogo);
+
 	}
 
 }
