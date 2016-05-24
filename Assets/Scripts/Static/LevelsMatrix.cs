@@ -73,8 +73,8 @@ public static class LevelsMatrix {
 		{	0	,	0	,	0	,	0	}		//10 - Programas
 	};
 
-	private static string[,] l4_message = {{"Debo destaparlo","Wohhh! Tiene mucho polvo" ,"Ahora si puedo cambiar la memoria","Todo listo, excepto por un detalle","¡Ya puedo entregarlo!"}, 
-		{"Esto no arregla el problema"  			 ,"Esto no arregla el problema"      ,"Esto no arregla el problema"       ,""}};
+	private static string[,] l4_message = {{"Debo destaparlo"              ,"Wohhh! Tiene mucho polvo"     ,"Ahora si puedo cambiar la memoria","Todo listo, excepto por un detalle","¡Ya puedo entregarlo!"}, 
+										   {"Esto no arregla el problema"  ,"Esto no arregla el problema"  ,"Esto no arregla el problema"       ,"Esto no arregla el problema"      , ""}};
 
 	/// <summary>
 	/// ////////////////////////////////////////
@@ -93,8 +93,8 @@ public static class LevelsMatrix {
 
 	};
 
-	private static string[,] l5_message = {{"Seguro la batería no carga bien","Es una batería nueva, pero no carga lo suficiente"  ,"Ya carga al 100%, pero se descarga muy rápido, Algún programa malicioso debe estar descargando la batería","¡Ya Funciona, ya puedo entregarlo!"}, 
-		{"Esto no arregla el problema"	 ,"Esto no arregla el problema"      					,"Esto no arregla el problema"       																		,""}};
+	private static string[,] l5_message = { {"Seguro la batería funciona bien","Es una batería nueva, pero no carga lo suficiente"  ,"Ya carga al 100%, pero se descarga muy rápido, Algún programa malicioso debe estar descargando la batería","¡Ya Funciona, ya puedo entregarlo!"}, 
+											{"Esto no arregla el problema"	  ,"Esto no arregla el problema"      					,"Esto no arregla el problema"       																		,""}};
 
 
 

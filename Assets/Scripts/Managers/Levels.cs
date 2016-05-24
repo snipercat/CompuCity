@@ -10,6 +10,12 @@ public class Levels : MonoBehaviour {
 	public GameObject 	  BotonFin;
 	public Text TextMovementLeft;
 	public GameObject MenuDerrota;
+	public GameObject fondoBloqueo;
+
+	public AudioClip Bien_SFX;
+	public AudioClip Mal_SFX;
+	public AudioClip Terminado_SFX;
+	public AudioClip Perdido_SFX;
 
 	private string[] buttons = new string[]{"","Voltimetro","Cargador","Memoria", "DiscoDuro", "Bateria","Destornillador","Soplador","Antivirus","Sistema","Programas"};
 
@@ -73,6 +79,7 @@ public class Levels : MonoBehaviour {
 /// <param name="boton">Boton.</param>
 	public void check(Button boton){
 		int buttonId = 0;
+		AudioSource audioSource = gameObject.GetComponent<AudioSource> ();
 		for (int c = 1; c < buttons.GetLength(0); c++) {
 			if (buttons [c] == boton.name) {
 				buttonId = c;
@@ -80,14 +87,19 @@ public class Levels : MonoBehaviour {
 			}
 		}
 
-		
+
+		// Si botón bien
 		if (secuence [0,state] == buttonId) {
 			//Debug.Log (message [0, state]);
 			state++;
+			audioSource.clip = Bien_SFX;
+			audioSource.Play();
 			showMessage(message [0,state]);
 			tip = message [0, state];
 			blockButtons ();
 		} else {
+			audioSource.clip = Mal_SFX;
+			audioSource.Play();
 			showMessage(message [1,state]);
 			//Debug.Log ("Eso no solucionará el problema");
 			//dialog.text = message [1,state];
@@ -95,13 +107,17 @@ public class Levels : MonoBehaviour {
 
 
 		if (secuence.GetLength (1) == state) {
+			audioSource.clip = Terminado_SFX;
+			audioSource.Play();
 			FondoFin.SetActive (true);
 			BotonFin.SetActive (true);
 		} else {
 			movements--;
 			TextMovementLeft.text = movements.ToString();
 
-			if (movements < 0) {
+			if (movements <= 0) {
+				audioSource.clip = Perdido_SFX;
+				audioSource.Play();
 				MenuDerrota.SetActive (true);
 			}
 		}
@@ -109,6 +125,18 @@ public class Levels : MonoBehaviour {
 
 	}
 
+	public void ButtonPressed(Button boton){
+		StartCoroutine (Check (boton));
+	}
+
+	IEnumerator Check(Button boton){
+		AudioSource audio = boton.GetComponent<AudioSource> ();
+		fondoBloqueo.SetActive (true);
+		audio.Play ();
+		yield return new WaitForSeconds (audio.clip.length);
+		check (boton);
+		fondoBloqueo.SetActive (false);
+	}
 
 
 /// <summary>
@@ -134,15 +162,29 @@ public class Levels : MonoBehaviour {
 /// </summary>
 	public void LevelComplete(){
 		//Si el jugador está jugando el nivel máximo en el que va, progresa un nivel.
-		int PlayerLevel = PlayerPrefs.GetInt ("PlayerLevel");
-		int CurrLevel = PlayerPrefs.GetInt("Level");
+		int PlayerLevel = PlayerPrefs.GetInt ( VARIABLES.PLAYERLEVEL);
+		int CurrLevel = PlayerPrefs.GetInt(VARIABLES.CURRENT_LEVEL);
 		Debug.Log ("PlayerLevel:"+PlayerLevel+"-CurrLevel: "+CurrLevel);
-		if (PlayerLevel == CurrLevel && PlayerLevel != 5) {
-			PlayerPrefs.SetInt ("PlayerLevel", PlayerLevel + 1);
+
+		if (PlayerLevel == 5) {
+			PlayerPrefs.SetInt (VARIABLES.GAME_COMPLETE_PREF, 1);
+			FUNCTIONS.LOAD_SCENE (VARIABLES.Creditos);
 		}
 
-		//CargarEscena escena decimal seleccion decimal nivel
-		FUNCTIONS.LOAD_SCENE (VARIABLES.Niveles);
+		if (PlayerLevel == CurrLevel && PlayerLevel != 5) {
+			PlayerPrefs.SetInt (VARIABLES.PLAYERLEVEL, PlayerLevel + 1);
+		}
+
+		if (CurrLevel == 5) {
+			PlayerPrefs.SetInt (VARIABLES.GAME_COMPLETE_PREF, 1);
+			FUNCTIONS.LOAD_SCENE (VARIABLES.Creditos);
+		} else {
+			//CargarEscena escena decimal seleccion decimal nivel
+			FUNCTIONS.LOAD_SCENE (VARIABLES.Niveles);
+
+		}
+
+
 
 	}
 
@@ -165,7 +207,7 @@ public class Levels : MonoBehaviour {
 				options += secuence [tool, phase];
 		}
 
-		return Mathf.CeilToInt (options / 2);
+		return Mathf.CeilToInt (options / 2)+1;
 	}
 
 	public void restarLevel(){
