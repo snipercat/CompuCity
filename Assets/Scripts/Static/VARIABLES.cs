@@ -16,6 +16,7 @@ public static class VARIABLES{
 	public static string PLAYERLEVEL 		= "PlayerLevel"; // Máximo nivel del jugador
 	public static string CURRENT_LEVEL 		= "Level"; //Nivel actual del jugador
 	public static string SALUDO 			= "Saludo"; // Indica si el jugador saludó
+	public static string GAME_COMPLETE_PREF = "GameComplete"; // Indica si se ha completado el juego, se usa en los créditos.
 
 	//Escenas
 	public static string Presentacion 		= "0. Presentacion";
