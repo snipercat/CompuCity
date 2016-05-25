@@ -3534,6 +3534,8 @@ MonoBehaviour:
   TextMovementLeft: {fileID: 759527764}
   MenuDerrota: {fileID: 1515718838}
   fondoBloqueo: {fileID: 494226330}
+  MenuHerramientas: {fileID: 1932182825}
+  MenuCDS: {fileID: 414165982}
   Bien_SFX: {fileID: 8300000, guid: 614a7990946858f45befb0108b04e614, type: 3}
   Mal_SFX: {fileID: 8300000, guid: a4ad553825f4b7045a98e7553b0f435f, type: 3}
   Terminado_SFX: {fileID: 8300000, guid: 229a70f09a0d4904b8a7d2b02ad507c9, type: 3}
@@ -4664,13 +4666,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 93ddaa51f9a9a8e4b99abc41fec9a562, type: 3}
     m_FontSize: 109
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 8
     m_MaxSize: 170
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -5352,13 +5354,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 93ddaa51f9a9a8e4b99abc41fec9a562, type: 3}
     m_FontSize: 109
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 8
     m_MaxSize: 170
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

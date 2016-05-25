@@ -11,6 +11,8 @@ public class Levels : MonoBehaviour {
 	public Text TextMovementLeft;
 	public GameObject MenuDerrota;
 	public GameObject fondoBloqueo;
+	public GameObject MenuHerramientas;
+	public GameObject MenuCDS;
 
 	public AudioClip Bien_SFX;
 	public AudioClip Mal_SFX;
@@ -121,6 +123,10 @@ public class Levels : MonoBehaviour {
 				MenuDerrota.SetActive (true);
 			}
 		}
+
+		//Cerrar ventanas de Herramientas
+		MenuHerramientas.SetActive(false);
+		MenuCDS.SetActive(false);
 
 
 	}

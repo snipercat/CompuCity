@@ -25,13 +25,13 @@ public class Saludo : MonoBehaviour {
 			Conversacion.text = "Cliente: Hola. Soy María. El PC está lento.";
 		break;
 		case 3:
-			Conversacion.text = "¡Buenas tardes! Necesito actualizar el sistema operativo";
+			Conversacion.text = "Cliente: ¡Buenas tardes! Necesito actualizar el sistema operativo";
 			break;
 		case 4:
-			Conversacion.text = "¡Buenas tardes! La memoria del PC es insuficiente";
+			Conversacion.text = "Cliente: ¡Buenas tardes! La memoria del PC es insuficiente";
 			break;
 		case 5:
-			Conversacion.text = "Hola, el pc Se descarga muy rápido.";
+			Conversacion.text = "Cliente: Hola, el pc Se descarga muy rápido.";
 			break;
 		}
 
@@ -48,7 +48,7 @@ public class Saludo : MonoBehaviour {
 		string tienda = PlayerPrefs.GetString(VARIABLES.STORENAME_PREF);
 
 		if (Opcion == 1) {
-			Conversacion.text += "\n"+jugador+": Hola. Soy "+jugador+", bienvenido a "+tienda+", Yo puedo solucionarlo! :D";
+			Conversacion.text = jugador+": Hola. Soy "+jugador+", bienvenido a "+tienda+", Yo puedo solucionarlo!";
 			Opciones.gameObject.SetActive(false);
 			Ignorar.gameObject.SetActive(false);
 			Siguiente.gameObject.SetActive(true);
