@@ -11,7 +11,7 @@ public class Creditos : MonoBehaviour {
 	}
 
 	void Start () {
-		PlayerPrefs.SetInt (VARIABLES.GAME_COMPLETE_PREF, 1);
+		//PlayerPrefs.SetInt (VARIABLES.GAME_COMPLETE_PREF, 1);
 
 		if (PlayerPrefs.GetInt (VARIABLES.GAME_COMPLETE_PREF) == 1) {
 			groupFade.SetActive (true);

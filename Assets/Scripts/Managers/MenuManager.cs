@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour {
 	void Start () {
 		SoundManager soundManager = gameObject.GetComponent<SoundManager> ();
 		soundManager.LoadValues ();
+		PlayerPrefs.SetInt (VARIABLES.GAME_COMPLETE_PREF, 0);
 	}
 	
 
@@ -20,7 +21,7 @@ public class MenuManager : MonoBehaviour {
 	/// Carga un nuevo juego y reinicia las variables de niveles
 	/// </summary>
 	public void NewGame(){
-		PlayerPrefs.SetInt ("PlayerLevel", 1);
+		PlayerPrefs.SetInt ( VARIABLES.PLAYERLEVEL, 1);
 		FUNCTIONS.LOAD_SCENE (VARIABLES.Nombre_Jugador);
 	}
 
@@ -34,7 +35,4 @@ public class MenuManager : MonoBehaviour {
 	public void cargaCreditos(){
 		FUNCTIONS.LOAD_SCENE (VARIABLES.Creditos);
 	}
-
-
-
 }
