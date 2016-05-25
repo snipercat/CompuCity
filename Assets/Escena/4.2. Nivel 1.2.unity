@@ -1504,7 +1504,11 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 129, y: 90}
+=======
+  m_AnchoredPosition: {x: 123, y: 69}
+>>>>>>> refs/remotes/origin/Dialogo
   m_SizeDelta: {x: 205, y: 99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759527764
@@ -1527,10 +1531,10 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 93ddaa51f9a9a8e4b99abc41fec9a562, type: 3}
     m_FontSize: 85
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 4
     m_MaxSize: 112
     m_Alignment: 1
@@ -1539,7 +1543,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 1
 --- !u!222 &759527765
 CanvasRenderer:
   m_ObjectHideFlags: 0
