@@ -1986,7 +1986,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -461.8, y: 85.6001}
+  m_AnchoredPosition: {x: 136, y: 84.904}
   m_SizeDelta: {x: 205, y: 99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759527764
@@ -4067,6 +4067,13 @@ MonoBehaviour:
   BotonFin: {fileID: 1386775087}
   TextMovementLeft: {fileID: 759527764}
   MenuDerrota: {fileID: 1515718838}
+  fondoBloqueo: {fileID: 0}
+  MenuHerramientas: {fileID: 0}
+  MenuCDS: {fileID: 0}
+  Bien_SFX: {fileID: 0}
+  Mal_SFX: {fileID: 0}
+  Terminado_SFX: {fileID: 0}
+  Perdido_SFX: {fileID: 0}
 --- !u!4 &1593941904
 Transform:
   m_ObjectHideFlags: 0
