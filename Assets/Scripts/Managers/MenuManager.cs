@@ -35,4 +35,9 @@ public class MenuManager : MonoBehaviour {
 	public void cargaCreditos(){
 		FUNCTIONS.LOAD_SCENE (VARIABLES.Creditos);
 	}
+
+	public void LoadTutorial(){
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Tutorial);
+
+	}
 }

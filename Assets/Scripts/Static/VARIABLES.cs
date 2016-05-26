@@ -29,7 +29,6 @@ public static class VARIABLES{
 	public static string Niveles 			= "3. Niveles";
 	public static string Dialogo 			= "4.1. Nivel 1.1";
 	public static string Juego 				= "4.2. Nivel 1.2";
-	public static string Tutorial_Dialogo 	= "5.1. Nivel 0";
-	public static string Tutorial_Juego 	= "5.2. Nivel 0";
+	public static string Tutorial 			= "5.1 Tutorial";
 
 }

@@ -31,7 +31,7 @@ public class LevelSelectManager : MonoBehaviour {
 	}
 
 	public void LoadTutorial(){
-		FUNCTIONS.LOAD_SCENE (VARIABLES.Tutorial_Dialogo);
+		FUNCTIONS.LOAD_SCENE (VARIABLES.Tutorial);
 
 	}
 

@@ -10,8 +10,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escena/1. Menu.unity
   - enabled: 1
-    path: Assets/Escena/1.1. Puntuaciones.unity
-  - enabled: 1
     path: Assets/Escena/1.2. Creditos.unity
   - enabled: 1
     path: Assets/Escena/2.1. Nombre Jugador.unity
@@ -26,6 +24,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escena/4.2. Nivel 1.2.unity
   - enabled: 1
-    path: Assets/Escena/5.1. Nivel 0.unity
-  - enabled: 1
-    path: Assets/Escena/5.2. Nivel 0.unity
+    path: Assets/Escena/5.1 Tutorial.unity
